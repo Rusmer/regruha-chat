@@ -1,0 +1,23 @@
+{
+  "name": "r-chat",
+  "version": "1.0.0",
+  "description": "R-Chat: Regruha Chat Messenger with Cloudflare Workers",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "hono": "^4.0.0",
+    "jose": "^5.0.0",
+    "nanoid": "^4.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "wrangler": "^3.45.0",
+    "vite": "^5.0.0",
+    "typescript": "^5.0.0"
+  }
+}
