@@ -1,22 +1,12 @@
 export async function onRequest(context) {
   const request = context.request;
 
-  // Редирект пользователей из России и Беларуси на зеркало Vercel
-  const country = request.headers.get("CF-IPCountry");
-
-  if (country === "RU" || country === "BY") {
-    const redirectUrl = new URL(request.url);
-    redirectUrl.hostname = "regruha.vercel.app";
-
-    return Response.redirect(redirectUrl.toString(), 302);
-  }
-
   const incomingUrl = new URL(request.url);
   const siteUrl = `${incomingUrl.protocol}//${incomingUrl.host}`;
 
   const image = "https://github.com/Rusmer/regruha/blob/main/functions/favicon.png?raw=true";
-  const title = "Regruha — T-Regruha";
-  const description = "Regruha / T-Regruha — официальный сайт проекта.";
+  const title = "Regruha-Chat — R-Chat";
+  const description = "Regruha-Chat / R-Chat — официальный сайт проекта.";
 
   if (incomingUrl.pathname === "/google14337db78de6911c.html") {
     return new Response("google-site-verification: google14337db78de6911c.html", {
@@ -60,7 +50,7 @@ Sitemap: ${siteUrl}/sitemap.xml`;
   }
 
   const url = new URL(request.url);
-  url.hostname = "regruha-terminal-core.base44.app";
+  url.hostname = "r-chat.base44.app";
   url.searchParams.set("v", "2");
 
   const response = await fetch(url.toString(), {
